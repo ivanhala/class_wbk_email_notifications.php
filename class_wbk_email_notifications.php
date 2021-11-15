@@ -456,7 +456,7 @@ class WBK_Email_Notifications {
 							$appointment = WBK_Db_Utils::initAppointmentById( $appointment_ids[0] );
 						 	if( $appointment != FALSE ){
 								$this->sendMultipleNotification($appointment_ids, $customer_daily_message, $customer_daily_subject, $appointment->getEmail() );
-								do_action( 'wbk_after_reminder_sent_to_customer', array( $appointment_ids ) );
+								do_action( 'wbk_after_reminder_sent_to_customer',  $appointment_ids  );
 							}
 						}
 					}
