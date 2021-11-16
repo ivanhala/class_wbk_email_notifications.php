@@ -318,6 +318,7 @@ class WBK_Email_Notifications {
 										$customer_daily_message = wbk_cleanup_loop( $customer_daily_message );
 										date_default_timezone_set('UTC');
 										wp_mail( $appointment->getEmail(), $subject, $customer_daily_message, $headers );
+
 										do_action( 'wbk_after_reminder_sent_to_customer', array( $appointment_id ) );
 									} else {
 										$customer_remider_ids[ $appointment->getEmail() ][] = $appointment_id;
@@ -389,6 +390,7 @@ class WBK_Email_Notifications {
 										$subject = wbk_cleanup_loop( $subject );
 										date_default_timezone_set('UTC');
 										wp_mail( $appointment->getEmail(), $subject, $customer_daily_message, $headers );
+										do_action( 'wbk_after_reminder_sent_to_customer', array( $appointment_id ) );
 									} else {
 										$customer_remider_ids[ $appointment->getEmail() ][] = $appointment_id;
 
@@ -433,6 +435,7 @@ class WBK_Email_Notifications {
 										$subject = wbk_cleanup_loop( $subject );
 										date_default_timezone_set('UTC');
 										wp_mail( $appointment->getEmail(), $subject, $customer_daily_message, $headers );
+										do_action( 'wbk_after_reminder_sent_to_customer', array( $appointment_id ) );
 									} else {
 										$customer_remider_ids[ $appointment->getEmail() ][] = $appointment_id;
 
